@@ -1,0 +1,14 @@
+{% extends 'base_layout.html'%}
+
+{% block content%}
+    <h1>EDIT</h1>
+    <div class="submit-container">
+        <form class="music-submit" action="/collection/edit/{{entry_id}}/" method="post">
+            <table>
+                {% csrf_token %}
+                {{ form.as_table }}
+            </table>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+{% endblock %}

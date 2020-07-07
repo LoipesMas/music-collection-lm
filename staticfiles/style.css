@@ -1,0 +1,561 @@
+@import "https://fonts.googleapis.com/css?family=Montserrat:300,400,700";
+@import "https://fonts.googleapis.com/css2?family=Roboto";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-size: 8vw;
+  font-family: Montserrat, sans-serif;
+  color: #2aa;
+  background: #eee;
+
+  scrollbar-width: auto;
+  scrollbar-color: #199 #dde;
+  scrollbar-arrow-color: rgb(0, 0, 0, 1);
+  text-align: center;
+}
+
+.wrapper {
+  width: 100%;
+  padding-bottom: 10rem;
+}
+
+.wrapper p {
+  width: 80%;
+  text-align: center;
+  margin: auto;
+  font-size: 4rem;
+  padding: 1rem;
+}
+
+h1 {
+  font-weight: 400;
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 4rem;
+  font-size: 7rem;
+  color: #2aa;
+}
+
+.wrapper a {
+  text-decoration: none;
+  display: block;
+  color: #228888;
+  margin: auto;
+  width: 60%;
+  background-color: rgb(223, 255, 255);
+  border: 0.5rem solid #228888;
+  border-radius: 2rem;
+}
+
+.home-button a {
+  color: #69c9c9;
+  text-decoration: none;
+  text-align: center;
+  margin: auto;
+  padding: 1rem;
+  width: 100%;
+  font-size: 4.5rem;
+  color: #228888;
+  background-color: rgb(223, 255, 255);
+  border: 0.5rem solid #228888;
+  border-radius: 2rem;
+  transition: 0.2s;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+.menu-button {
+  cursor: pointer;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin: auto;
+  margin-bottom: 2rem;
+  text-align: center;
+  display: block;
+  color: #c7c7c7;
+  transition: 0.2s;
+  background-color: rgb(48, 56, 56);
+}
+
+.site-form {
+  font-size: 4rem;
+  margin: auto;
+  margin-bottom: 2rem;
+  width: 80%;
+  font-family: "Roboto";
+  display: block;
+  color: #022;
+  padding: 2rem;
+  border: 0.5rem solid #228888;
+  background-color: #aadddd;
+  border-radius: 1rem;
+}
+.site-form input {
+  width: 90%;
+  padding-left: 1rem;
+  font-size: 4rem;
+  border-radius: 1rem;
+  border: 0.3rem solid #228888;
+  background-color: rgb(236, 247, 245);
+}
+
+.site-form label {
+  font-size: 4rem;
+}
+
+.site-form .helptext {
+  padding: 0;
+  margin: auto;
+  width: 80%;
+  font-size: 2.5rem;
+}
+
+.site-form li {
+  padding: 0;
+  margin: auto;
+  width: 80%;
+  font-size: 2.5rem;
+}
+
+.site-form .submit-button {
+  width: 50%;
+  font-size: 3rem;
+  display: block;
+  margin: auto;
+  margin-top: 0.5rem;
+  text-align: center;
+  padding: 0.65rem 1rem;
+  background-color: #228888;
+}
+
+.wrapper p a {
+  padding: 1rem 2rem;
+}
+
+.search-form {
+  display: grid;
+  max-width: 90vw;
+}
+
+.search-form label {
+  color: black;
+  grid-column: 1;
+  font-size: 2.3rem;
+}
+
+.search-form input {
+  grid-column: 2;
+  font-size: 2rem;
+}
+.search-form select {
+  grid-column: 2;
+  font-size: 2rem;
+}
+
+.search-form .search-button {
+  background-color: #228888;
+  border: 0;
+  font-size: 2rem;
+  padding: 0 2rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.table-container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 96%;
+  height: 100%;
+  overflow: auto;
+}
+
+/* The side navigation menu */
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #111; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 1rem 1rem 1rem 4rem;
+  text-decoration: none;
+  font-size: 4rem;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 5rem;
+  margin-left: 50px;
+}
+
+/*FOOTER*/
+.footer {
+  font-size: 2rem;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  width: 100%;
+  background-color: #004444;
+  color: white;
+  text-align: center;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+@media (min-aspect-ratio: 5/4) {
+  * {
+    padding: 0;
+    margin: 0;
+  }
+
+  body {
+    width: 100%;
+    font-family: Montserrat, sans-serif;
+    font-size: 32px;
+    color: #000;
+    background: #ddd;
+
+    scrollbar-width: auto;
+    scrollbar-color: #199 #dde;
+    scrollbar-arrow-color: rgb(0, 0, 0, 1);
+  }
+
+  body::-webkit-scrollbar {
+    width: 12rem;
+  }
+  body::-webkit-scrollbar-track {
+    background: #dde;
+  }
+  body::-webkit-scrollbar-thumb {
+    background-color: #199;
+    border-radius: 2rem;
+    border: 3rem solid #dde;
+  }
+
+  h1 {
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+    font-size: 4rem;
+    color: #2aa;
+  }
+  h2 {
+    text-decoration: none;
+    text-align: center;
+    margin-top: 0rem;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    color: #228888;
+  }
+
+  h5 {
+    text-decoration: none;
+    text-align: center;
+    margin-top: 0.3rem;
+    font-size: 2rem;
+    color: #228888;
+  }
+
+  .wrapper {
+    padding-bottom: 0;
+  }
+  .wrapper a {
+    display: block;
+    margin: auto;
+    width: 30%;
+    background: none;
+    border: none;
+  }
+  .wrapper p {
+    width: 80%;
+    text-align: center;
+    margin: auto;
+    font-size: 3rem;
+    color: rgb(93, 105, 105);
+  }
+  a .home-button {
+    color: #daffff;
+    text-decoration: none;
+    text-align: center;
+    margin: auto;
+    padding: 2rem 1rem;
+    width: 100%;
+    font-size: 2.6rem;
+    background-color: #228888;
+    transition: 0.2s;
+  }
+  a .home-button:hover {
+    color: #acf8f8;
+    background-color: #439797;
+  }
+
+  .search-form {
+    display: inline-flex;
+    margin-bottom: 0.5rem;
+  }
+  .search-form label {
+    font-size: 1rem;
+  }
+
+  .search-form select,
+  .search-form label,
+  .search-form input {
+    margin: auto 0.2rem;
+    display: block;
+    font-size: 1rem;
+    height: 1.3rem;
+  }
+
+  .search-form .search-button {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 1rem;
+    padding: 0 1rem;
+    font-size: 1rem;
+    height: 2rem;
+    cursor: pointer;
+    border-radius: 0;
+  }
+  .search-form .search-button:hover {
+    color: black;
+    background-color: #439797;
+  }
+
+  .table-container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    height: 80vh;
+    overflow: auto;
+  }
+
+  .center {
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+  }
+
+  .menu-button:hover {
+    color: #ffffff;
+    background-color: rgb(59, 66, 66);
+  }
+
+  .title-link {
+    display: block;
+    text-decoration: none;
+    color: #f2f2f2;
+  }
+
+  .site-form {
+    margin: auto;
+    margin-bottom: 2rem;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    font-family: "Roboto";
+    display: block;
+    color: #022;
+    border: 0.3rem solid #228888;
+    background-color: #aadddd;
+    border-radius: 0.3rem;
+  }
+  .site-form p {
+    width: 100%;
+  }
+  .site-form input {
+    display: flex;
+    width: 90%;
+    font-size: 1.7rem;
+    border-radius: 1rem;
+    border: 0.1rem solid #228888;
+    background-color: rgb(236, 247, 245);
+  }
+
+  .site-form label {
+    color: #0f1f1f;
+    display: flex;
+    font-size: 1.7rem;
+  }
+
+  .wrapper p a {
+    font-size: 2rem;
+  }
+
+  .site-form .submit-button {
+    font-size: 1.5rem;
+    width: auto;
+    padding: 0.7rem 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0;
+    cursor: pointer;
+  }
+
+  .site-form .submit-button:hover {
+    color: #1c3f3f;
+    background-color: #439797;
+  }
+  .site-form .helptext {
+    padding: 0;
+    margin: auto;
+    width: 80%;
+    font-size: 1rem;
+  }
+  .site-form li {
+    padding: 0;
+    margin: auto;
+    width: 80%;
+    font-size: 1rem;
+  }
+
+  .helptext,
+  .helptext ul {
+    margin: 0 auto 2rem;
+    display: block;
+  }
+  .errorlist {
+    padding: 0;
+  }
+
+  .errorlist li {
+    padding: 1rem;
+    margin-bottom: 2rem;
+    list-style-type: none;
+    border: 0.3rem solid #ff7022;
+    background: rgb(255, 112, 34, 0.3);
+    border-radius: 4rem;
+  }
+
+  .music-submit {
+    font-size: 1.5rem;
+    margin: auto;
+    margin-bottom: 2rem;
+    max-width: 30rem;
+    font-family: "Roboto";
+    display: block;
+    color: #022;
+    padding: 1rem;
+    border: 0.2rem solid #228888;
+    background-color: #aadddd;
+    border-radius: 0;
+  }
+  .music-submit input,
+  .music-submit select {
+    padding-left: 0.18rem;
+    font-size: 1.2rem;
+  }
+  .music-submit input:hover,
+  .music-submit select:hover {
+    border-color: cadetblue;
+    border-radius: 0.1rem;
+  }
+
+  input[type="submit"] {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    border: 0;
+    padding: 0.8rem;
+    background-color: #228888;
+    font-size: 1.1rem;
+    cursor: pointer;
+  }
+  input[type="submit"]:hover {
+    background-color: #439797;
+  }
+
+  .submit-container {
+    display: grid;
+  }
+
+  /* The side navigation menu */
+  .sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: #111; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  }
+
+  /* The navigation menu links */
+  .sidenav a {
+    padding: 1rem 1rem 1rem 4rem;
+    text-decoration: none;
+    font-size: 2rem;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+
+  /* When you mouse over the navigation links, change their color */
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+
+  /* Position and style the close button (top right corner) */
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 3rem;
+    margin-left: 50px;
+  }
+  /*FOOTER*/
+  .footer {
+    font-size: 1.5rem;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #004444;
+    color: white;
+    text-align: center;
+  }
+}

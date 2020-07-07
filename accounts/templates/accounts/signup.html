@@ -1,0 +1,13 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+<h1>Sign Up</h1>
+    <div class="center">
+        <form class="site-form" action="/accounts/signup/" method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input class="submit-button" type="submit" value="Signup">
+        </form>
+    </div>
+    <p><a href="{% url 'accounts:view-login' %}">Already have an account?</a></p>
+{% endblock content %}

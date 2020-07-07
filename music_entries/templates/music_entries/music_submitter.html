@@ -1,0 +1,33 @@
+{% extends 'base_layout.html'%}
+
+{% block content%}
+        <h1>SUBMIT</h1>
+        {% if request.user.is_authenticated%}
+                <div class="submit-container">
+                {% if form %}
+                        <form class="music-submit" action="{% url 'submit'%}" method="post">
+                                <table>
+                                        {% csrf_token %}
+                                        {{form.as_table}}
+                                </table>
+                        {% if form2 %}
+                        <input type="submit" value="Submit">
+                        {% else %}
+                        <input type="submit" value="Confirm">
+                        {% endif %}
+                        </form>
+                {% endif %}
+                {% if form2 %}
+                        <form class="music-submit" action="{% url 'submit-link'%}" method="post">
+                                <table>
+                                        {% csrf_token %}
+                                        {{form2}}
+                                </table>
+                                <input type="submit" value="Submit">
+                {% endif %}
+                </div>
+        {% else %}
+                <h2>You need to be logged in to use that function</h2>
+                <p><a class="center" href={% url 'accounts:view-login' %}>Log in</a><a class="center" href={% url 'accounts:view-signup' %}>Sign Up</a></p>
+        {% endif %}
+{% endblock %}

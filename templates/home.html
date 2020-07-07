@@ -1,0 +1,12 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+<h1>Welcome to Music Collections</h1>
+{% if request.user.is_authenticated %}
+        <a href="{% url 'view-own' %}"><p class="home-button">View your collection</p></a>
+{% else %}
+        <a href="{% url 'accounts:view-login' %}"><p class="home-button">Log in to use your collection</p></a>
+        <br>
+        <a href="{% url 'accounts:view-signup' %}"><p class="home-button">Sign up if you don't have an account</p></a>
+{% endif %}
+{% endblock content %}

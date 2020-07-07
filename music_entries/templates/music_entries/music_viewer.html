@@ -1,0 +1,50 @@
+{% extends 'base_layout.html'%}
+
+{% block content%}
+        <h5>HERE BE THY MUSIC</h5>
+        <form class="search-form">
+            {{ form }}
+            <input class="search-button" type="submit" value="Search">
+        </form>
+        <div class="table-container">
+            <table class="rwd-table">
+                <tr>
+                    <th class="table-title"onclick="order_by('title')">Title</th>
+                    <th class="table-artist"onclick="order_by('artist')">Artist</th>
+                    <th class="table-genre"onclick="order_by('genre')">Genre</th>
+                    <th class="table-type"onclick="order_by('type')">Type</th>
+                </tr>
+            {% for entry in music_entries %}
+                <tr>
+                    {% if entry.link != "null" %}
+                    <td data-th="Title"><a class="title-link" href="{{entry.link}}" target="_blank">{{entry.title}}</a></td>
+                    {% else %}
+                    <td data-th="Title">{{entry.title}}</td>
+                    {% endif %}
+                    <td data-th="Artist">{{entry.artist}}</td>
+                    <td data-th="Genre">{{entry.genre.title}}</td>
+                    <td data-th="Type">{{entry.get_type}}<img onclick="edit_entry({{entry.id}})"style="float: right; cursor: pointer;" src="/static/icons8-edit.svg"/></td>
+                <tr>
+            {%endfor%}
+            </table>
+        </div>
+        <script>
+            function order_by(param){
+                var url = new URL(window.location.href);
+                var search_params = new URLSearchParams(url.search);
+                if (search_params.get('order_by') === param){
+                    param = "-"+param;
+                }
+                search_params.set('order_by',param);
+                url.search = search_params.toString();
+                window.location.href = url.toString();
+            }
+
+            function edit_entry(id){
+                var url = new URL(window.location.href);
+                url.search = "";
+                url.pathname="/collection/edit/"+id;
+                window.location.href = url.toString();
+            }
+        </script>
+{% endblock %}

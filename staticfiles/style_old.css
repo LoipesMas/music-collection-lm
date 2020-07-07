@@ -1,0 +1,193 @@
+@import "https://fonts.googleapis.com/css?family=Montserrat:300,400,700";
+@import "https://fonts.googleapis.com/css2?family=Roboto";
+
+* { 
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  width: 100%;
+  font-family: Montserrat, sans-serif;
+  font-size: 32px;
+  color: #000;
+  background: #ddd;
+
+  scrollbar-width: auto;          
+  scrollbar-color: #199 #dde;
+  scrollbar-arrow-color: rgb(0,0,0,1);
+  border: 1rem solid yellow;
+}
+  
+
+body::-webkit-scrollbar {
+  width: 12rem;               
+}
+body::-webkit-scrollbar-track {
+  background: #dde;        
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #199;    
+  border-radius: 2rem;       
+  border: 3rem solid #dde;   
+}
+
+
+h1 {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 2.5rem;
+  color: #2aa;
+}
+h2 {
+  text-decoration: none;
+  text-align: center;
+  margin-top: rem;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: #228888;
+}
+a{
+  text-decoration: none;
+  color: #228888;
+}
+
+p {
+    font-size: 1rem;
+    text-align: center;
+    color: #000;
+}
+
+.table-container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 85rem;
+  height: 60vh;
+  overflow: auto;
+
+}
+
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+
+.title-link {
+  display: block;
+  text-decoration: none;
+  color: #f2f2f2;
+}
+
+.site-form {
+  font-size: 1rem;
+  margin: auto;
+  margin-bottom: 2rem;
+  max-width: 15rem;
+  font-family: 'Roboto';
+  display: block;
+  color: #022;
+  padding: 1rem;
+  border: 0.5rem solid #228888;
+  background-color: #aadddd;
+  border-radius: 1rem;
+}
+
+.helptext, .helptext ul {
+  margin: 0 auto 2rem;
+  display: block;
+}
+.errorlist {
+  padding: 0;
+}
+
+.errorlist li{
+  padding: 1rem;
+  margin-bottom: 2rem;
+  list-style-type: none;
+  border: 0.3rem solid #ff7022;
+  background: rgb(255,112,34,0.3);
+  border-radius: 4rem;
+}
+
+.music-submit{
+  margin: auto;
+  margin-bottom: 2rem;
+  max-width: 30rem;
+  font-family: 'Roboto';
+  display: block;
+  color: #022;
+  padding: 1rem;
+  border: 3rem solid #228888;
+  background-color: #aadddd;
+  border-radius: 1rem;
+  
+}
+
+input[type="submit"]{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+  border: 1rem;
+  padding: 0.8rem;
+  border-radius: 1rem;
+  background-color: #228888;
+  font-size: 110%;
+}
+
+.submit-container {
+  display: grid;
+}
+
+/*TOPNAV*/
+/* Add a black background color to the top navigation */
+.test {
+  border: 1rem solid red;
+
+}
+
+.topnav {
+    text-align: center;
+    background-color: #333;
+    min-height: 3.2rem;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 1rem 1rem;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    background-color: #2aa;
+    color: #000;
+  }
+  
+  /* Add a color to the active/current link */
+  .topnav a.active {
+    background-color: #4CAF50;
+    color: white;
+  }
+
+/*FOOTER*/
+.footer {
+  font-size: 1.5rem;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #004444;
+  color: white;
+  text-align: center;
+}
