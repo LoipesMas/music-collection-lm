@@ -1,7 +1,7 @@
 {% extends 'base_layout.html' %}
 
 {% block content %}
-<h1>Welcome to Music Collections</h1>
+<h1><img class="home-logo" src="/static/mc-logo.svg"/>Welcome to Music Collections<img class="home-logo" src="/static/mc-logo.svg"/></h1>
 {% if request.user.is_authenticated %}
         <a href="{% url 'view-own' %}"><p class="home-button">View your collection</p></a>
 {% else %}
