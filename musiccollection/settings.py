@@ -30,6 +30,7 @@ ALLOWED_HOSTS = [
     '192.168.0.22',
     '77.254.7.9',
     'afowkxxkav.ml',
+    'musiccollection.ml',
 ]
 
 #SECURE_SSL_HOST = 'https://afowkxxkav.ml'
