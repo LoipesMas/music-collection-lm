@@ -97,6 +97,14 @@ Modified by LoipesMas © 2020.
   border: none;
 }
 
+.table-type {
+  min-width: 11rem;
+}
+
+td img {
+  height: 3.2rem;
+}
+
 @media (min-aspect-ratio: 5/4) {
   .rwd-table {
     font-size: 1.2rem;
@@ -193,6 +201,10 @@ Modified by LoipesMas © 2020.
     width: 10vw;
   }
   .table-type {
-    width: 7vw;
+    min-width: 1vw;
+    width: 5vw;
+  }
+  td img {
+    height: 2rem;
   }
 }

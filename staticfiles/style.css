@@ -38,7 +38,6 @@ body {
   color: #fc0f1e;
 }
 
-
 h1 {
   font-weight: 400;
   text-align: center;
@@ -54,10 +53,9 @@ h1 .home-logo {
   padding-right: 1rem;
 }
 
-h1 .home-logo:after {
-  content: "<br/>";
+h5 {
+  color: #228888;
 }
-
 
 .wrapper a {
   text-decoration: none;
@@ -197,6 +195,56 @@ h1 .home-logo:after {
   height: 100%;
   overflow: auto;
 }
+.music-submit {
+  font-size: 3.2rem;
+  margin: auto;
+  margin-bottom: 2rem;
+  width: 90%;
+  font-family: "Roboto";
+  display: block;
+  color: #022;
+  padding: 1rem;
+}
+
+.music-submit label {
+  margin-left: 3rem;
+  margin-right: 1rem;
+}
+
+.music-submit input,
+.music-submit select {
+  padding-left: 0.18rem;
+  margin-top: 0.4rem;
+  margin-bottom: 0.4rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 3.2rem;
+  border: 0.3rem solid #a3c4c4;
+  width: 100%;
+}
+.music-submit input:hover,
+.music-submit select:hover {
+  border-color: cadetblue;
+}
+input[type="submit"] {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+  border: 0;
+  padding: 0.8rem;
+  background-color: #228888;
+  font-size: 2rem;
+  cursor: pointer;
+  width: 25%;
+}
+input[type="submit"]:hover {
+  background-color: #439797;
+}
+
+.submit-container {
+  display: grid;
+}
 
 /* The side navigation menu */
 .sidenav {
@@ -301,7 +349,7 @@ h1 .home-logo:after {
     padding-left: 1rem;
     padding-right: 1rem;
     height: 3rem;
- }
+  }
 
   h2 {
     text-decoration: none;
@@ -494,24 +542,31 @@ h1 .home-logo:after {
     font-size: 1.5rem;
     margin: auto;
     margin-bottom: 2rem;
+    width: auto;
     max-width: 30rem;
     font-family: "Roboto";
     display: block;
     color: #022;
-    padding: 1rem;
-    border: 0.2rem solid #228888;
+    padding: 1rem 2rem;
+    border: 0.17rem solid #228888;
     background-color: #aadddd;
     border-radius: 0;
   }
+  .music-submit label {
+    margin-left: 0;
+    margin-right: 0.5rem;
+  }
   .music-submit input,
   .music-submit select {
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
     padding-left: 0.18rem;
     font-size: 1.2rem;
+    border: 0.2rem solid #a3c4c4;
   }
   .music-submit input:hover,
   .music-submit select:hover {
     border-color: cadetblue;
-    border-radius: 0.1rem;
   }
 
   input[type="submit"] {
@@ -524,6 +579,7 @@ h1 .home-logo:after {
     background-color: #228888;
     font-size: 1.1rem;
     cursor: pointer;
+    width: 30%;
   }
   input[type="submit"]:hover {
     background-color: #439797;
