@@ -91,6 +91,7 @@ Modified by LoipesMas © 2020.
 }
 
 .rwd-table a {
+  display: table-cell;
   text-decoration: 2px #5dd underline;
   color: whitesmoke;
   background: none;
