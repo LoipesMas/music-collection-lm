@@ -12,11 +12,19 @@ from django.core.validators import URLValidator
 
 import logging
 
+from django.core import serializers
+
 # Create your views here.
 
 
 def default(request):
     return render(request, 'base_layout.html')
+
+
+def MusicEntryListCreate(request, key):
+    queryset = MusicEntry.objects.all().filter(public_key__exact=key)
+    mes = serializers.serialize('json', queryset)
+    return HttpResponse(mes, content_type="text/json-comment-filtered")
 
 
 def submit(request):
