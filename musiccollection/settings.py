@@ -23,11 +23,11 @@ SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = 'fz8h^q*j)4pv&$vn$m-mllwg^7gunn^isgvj(@0(y%21d&_m7n'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     'localhost',
-    '192.168.0.22',
+    '192.168.0.17',
     '77.254.7.9',
     'afowkxxkav.ml',
     'musiccollection.ml'
@@ -51,6 +51,9 @@ INSTALLED_APPS = [
     'music_entries',
     'accounts',
     'corsheaders',
+    'rest_framework',
+    'rest_framework.authtoken',
+    'api',
 
 ]
 

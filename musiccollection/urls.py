@@ -19,7 +19,7 @@ from . import views
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
-    path('mirror/',views.mirror),
+    path('api/', include('api.urls')),
     path('accounts/',include('accounts.urls')),
     path('admin/', admin.site.urls),
     path('about/', views.about, name='about'),
