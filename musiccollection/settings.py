@@ -50,10 +50,12 @@ INSTALLED_APPS = [
     'musiccollection',
     'music_entries',
     'accounts',
-    'rest_framework',
+    'corsheaders',
+
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -143,8 +145,4 @@ STATICFILES_DIRS = (
 # SESSION_COOKIE_HTTPONLY=True
 #SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTOCOL', 'https')
 
-REST_FRAMEWORK = {
-    'DEFAULT_RENDERER_CLASSES': (
-        'rest_framework.renderers.JSONRenderer',
-    )
-}
+CORS_ORIGIN_ALLOW_ALL = True

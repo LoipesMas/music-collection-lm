@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.db.models.functions import Lower
 
 from .models import MusicEntry
@@ -14,6 +14,8 @@ import logging
 
 from django.core import serializers
 
+import json
+
 # Create your views here.
 
 
@@ -23,8 +25,24 @@ def default(request):
 
 def MusicEntryListCreate(request, key):
     queryset = MusicEntry.objects.all().filter(public_key__exact=key)
+    if request.GET.get('title'):
+        queryset = queryset.filter(title__icontains=request.GET.get('title'))
+    if request.GET.get('artist'):
+        queryset = queryset.filter(artist__icontains=request.GET.get('artist'))
+    if request.GET.get('genre'):
+        queryset = queryset.filter(genre__icontains=request.GET.get('genre'))
+    if request.GET.get('type') != 'any':
+        queryset = queryset.filter(type__icontains=request.GET.get('type'))
+
+    if request.GET.get('order_by'):
+        order = request.GET.get('order_by')
+        if order[0] == "-":
+            queryset = queryset.order_by(Lower(order[1:])).reverse()
+        else:
+            queryset = queryset.order_by(Lower(request.GET.get('order_by')))
+
     mes = serializers.serialize('json', queryset)
-    return HttpResponse(mes, content_type="text/json-comment-filtered")
+    return JsonResponse(json.loads(mes), content_type="application/json", safe=False)
 
 
 def submit(request):
