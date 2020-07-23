@@ -28,7 +28,7 @@ class UserInfoView(APIView):
             public_key = PublicKeys.objects.all().get(
                 user_id__exact=request.user.id).public_key
             content = {
-                'user': request.user.id,
+                'user': request.user.username,
                 'public_key': public_key,  # None
             }
             return Response(content)
