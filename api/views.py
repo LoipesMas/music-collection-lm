@@ -9,19 +9,31 @@ from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.authentication import TokenAuthentication, SessionAuthentication, BasicAuthentication
 
+from accounts.models import PublicKeys
+
 
 # Create your views here.
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
-class NameView(APIView):
-    authentication_classes = [TokenAuthentication, SessionAuthentication, BasicAuthentication]
+
+class UserInfoView(APIView):
+    authentication_classes = [TokenAuthentication,
+                              SessionAuthentication, BasicAuthentication]
     permission_classes = [IsAuthenticated]
 
     def get(self, request):
-        content = {
-            'user': request.user.id,  # `django.contrib.auth.User` instance.
-            'auth': request.auth.key,  # None
-        }
-        return Response(content)
+        if request.user.is_authenticated:
+            public_key = PublicKeys.objects.all().get(
+                user_id__exact=request.user.id).public_key
+            content = {
+                'user': request.user.id,
+                'public_key': public_key,  # None
+            }
+            return Response(content)
+        else:
+            content = {
+                'message': 'Not authenticated'
+            }
+            return Response(content)
