@@ -11,6 +11,9 @@ from rest_framework.authentication import TokenAuthentication, SessionAuthentica
 
 from accounts.models import PublicKeys
 
+from music_entries.forms import MusicEntryForm
+from music_entries.models import MusicEntry
+
 
 # Create your views here.
 class UserViewSet(viewsets.ModelViewSet):
@@ -37,3 +40,30 @@ class UserInfoView(APIView):
                 'message': 'Not authenticated'
             }
             return Response(content)
+
+
+class MusicSubmit(APIView):
+    authentication_classes = [TokenAuthentication,
+                              SessionAuthentication, BasicAuthentication]
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request):
+        if request.method == "POST":
+            form = MusicEntryForm(request.POST)
+            if form.is_valid():
+                key = PublicKeys.objects.all().get(user_id__exact=request.user.id).public_key
+
+                me = MusicEntry()
+                me.title = form.cleaned_data['title']
+                me.artist = form.cleaned_data['artist']
+                me.genre = form.cleaned_data['genre']
+                me.type = form.cleaned_data['type']
+                if len(form.cleaned_data['link']) > 5:
+                    me.link = form.cleaned_data['link']
+                else:
+                    me.link = 'null'
+
+                me.public_key = key
+                me.submitter = request.user.username
+                me.save()
+            return Response({form.is_valid()})
