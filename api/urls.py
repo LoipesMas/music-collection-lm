@@ -12,6 +12,7 @@ router.register('users', UserViewSet)
 
 urlpatterns = [
     path('auth/', obtain_auth_token),
+    path('parse/', views.ParseView.as_view()),
     path('userinfo/', views.UserInfoView.as_view()),
     path('submit/', views.MusicSubmit.as_view()),
     path('', include(router.urls)),

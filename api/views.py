@@ -14,8 +14,11 @@ from accounts.models import PublicKeys
 from music_entries.forms import MusicEntryForm
 from music_entries.models import MusicEntry
 
+from music_entries.spotify_parser import SpotifyParser, SpotifyMusicEntry
 
 # Create your views here.
+
+
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
@@ -66,4 +69,33 @@ class MusicSubmit(APIView):
                 me.public_key = key
                 me.submitter = request.user.username
                 me.save()
-            return Response({form.is_valid()})
+
+                return Response("OK")
+
+            response = Response("Form data invalid")
+            response.status_code = 400
+            return response
+
+
+class ParseView(APIView):
+
+    authentication_classes = [TokenAuthentication,
+                              SessionAuthentication, BasicAuthentication]
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request):
+        url = request.POST.get("url")
+        parser = SpotifyParser()
+        spotify_entry = parser.parse(url)
+        if spotify_entry is None:
+            response = Response("Url invalid")
+            response.status_code = 400
+        else:
+            data = {}
+            data['title'] = spotify_entry.title
+            data['artist'] = spotify_entry.artist
+            data['genre'] = spotify_entry.genre
+            data['type'] = spotify_entry._type
+            data['link'] = spotify_entry.link
+            return Response(data)
+        return Response()
