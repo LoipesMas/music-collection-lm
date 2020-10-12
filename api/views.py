@@ -16,13 +16,6 @@ from music_entries.models import MusicEntry
 
 from music_entries.spotify_parser import SpotifyParser, SpotifyMusicEntry
 
-# Create your views here.
-
-
-class UserViewSet(viewsets.ModelViewSet):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
-
 
 class UserInfoView(APIView):
     authentication_classes = [TokenAuthentication,
