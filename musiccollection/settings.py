@@ -11,6 +11,11 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import environ
+
+env = environ.Env()
+
+environ.Env.read_env()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,10 +25,10 @@ SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'fz8h^q*j)4pv&$vn$m-mllwg^7gunn^isgvj(@0(y%21d&_m7n'
+SECRET_KEY = env("SECRET_KEY", default='unsafe-key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = bool(int(env("DEBUG", default='1')))
 
 ALLOWED_HOSTS = [
     'localhost',
@@ -33,9 +38,9 @@ ALLOWED_HOSTS = [
     'musiccollection.ml',
 ]
 
-#SECURE_SSL_HOST = 'https://afowkxxkav.ml'
+#SECURE_SSL_HOST = 'musiccollection.ml'
 
-#SECURE_SSL_REDIRECT = False
+#SECURE_SSL_REDIRECT = False 
 
 
 # Application definition
