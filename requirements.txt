@@ -2,4 +2,4 @@ django
 spotipy
 django-cors-headers
 djangorestframework
-
+django-environ
