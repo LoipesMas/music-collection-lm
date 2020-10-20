@@ -246,6 +246,10 @@ input[type="submit"]:hover {
   display: grid;
 }
 
+p.about {
+  font-size: 2rem;
+}
+
 /* The side navigation menu */
 .sidenav {
   height: 100%; /* 100% Full-height */
@@ -589,6 +593,15 @@ input[type="submit"]:hover {
     display: grid;
   }
 
+  p.about {
+    font-size: 2rem;
+    width: 40%;
+    text-align: justify;
+  }
+  .preview-img {
+    border: 0.5rem solid #00444455;
+    border-radius: 1rem;
+  }
   /* The side navigation menu */
   .sidenav {
     height: 100%; /* 100% Full-height */
