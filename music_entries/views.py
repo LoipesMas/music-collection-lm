@@ -63,7 +63,7 @@ def submit(request):
             me.public_key = key
             me.submitter = request.user.username
             me.save()
-            return redirect('/collection/')
+            return redirect('/music/collection/')
         else:
             return render(request, 'music_entries/music_submitter.html', {'form': form})
     else:
@@ -139,12 +139,14 @@ def view(request, key):
 def view_own(request):
     if request.user.is_authenticated:
         key = PublicKeys.objects.all().get(user_id__exact=request.user.id).public_key
-        return redirect('/collection/'+key)
+        return redirect('/music/collection/'+key)
     else:
         return redirect('home')
 
 
 def edit(request, entry_id):
+    if not request.user.is_authenticated:
+        redirect('home')
 
     key = PublicKeys.objects.all().get(user_id__exact=request.user.id).public_key
     try:

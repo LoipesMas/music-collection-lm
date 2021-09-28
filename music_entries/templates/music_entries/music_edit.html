@@ -3,7 +3,7 @@
 {% block content%}
     <h1>EDIT</h1>
     <div class="submit-container">
-        <form class="music-submit" action="/collection/edit/{{entry_id}}/" method="post">
+        <form class="music-submit" action="/music/collection/edit/{{entry_id}}/" method="post">
             <table>
                 {% csrf_token %}
                 {{ form.as_table }}

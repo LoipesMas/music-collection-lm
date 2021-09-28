@@ -33,14 +33,12 @@ DEBUG = bool(int(env("DEBUG", default='1')))
 ALLOWED_HOSTS = [
     'localhost',
     '192.168.0.22',
-    '77.254.7.9',
-    'afowkxxkav.ml',
-    'musiccollection.ml',
+    'loipesmas.ml',
 ]
 
-#SECURE_SSL_HOST = 'musiccollection.ml'
+SECURE_SSL_HOST = 'loipesmas.ml'
 
-#SECURE_SSL_REDIRECT = False 
+SECURE_SSL_REDIRECT = True
 
 
 # Application definition

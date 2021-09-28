@@ -1,3 +1,4 @@
+environ
 django
 spotipy
 django-cors-headers
