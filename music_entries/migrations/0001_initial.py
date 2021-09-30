@@ -7,20 +7,27 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='MusicEntry',
+            name="MusicEntry",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=256)),
-                ('artist', models.CharField(max_length=256)),
-                ('genre', models.CharField(max_length=256)),
-                ('type', models.CharField(max_length=256)),
-                ('link', models.CharField(max_length=256)),
-                ('added', models.DateTimeField(auto_now_add=True)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("title", models.CharField(max_length=256)),
+                ("artist", models.CharField(max_length=256)),
+                ("genre", models.CharField(max_length=256)),
+                ("type", models.CharField(max_length=256)),
+                ("link", models.CharField(max_length=256)),
+                ("added", models.DateTimeField(auto_now_add=True)),
             ],
         ),
     ]

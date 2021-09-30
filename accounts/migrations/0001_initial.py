@@ -7,15 +7,17 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='PublicKeys',
+            name="PublicKeys",
             fields=[
-                ('user_id', models.IntegerField(primary_key=True, serialize=False, unique=True)),
-                ('public_key', models.CharField(max_length=8, unique=True)),
+                (
+                    "user_id",
+                    models.IntegerField(primary_key=True, serialize=False, unique=True),
+                ),
+                ("public_key", models.CharField(max_length=8, unique=True)),
             ],
         ),
     ]

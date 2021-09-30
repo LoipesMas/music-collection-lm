@@ -6,13 +6,16 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('music_entries', '0002_musicentry_submitter'),
+        ("music_entries", "0002_musicentry_submitter"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='musicentry',
-            name='type',
-            field=models.CharField(choices=[('album', 'Album'), ('song', 'Song'), ('mix', 'Playlist/Mix')], max_length=256),
+            model_name="musicentry",
+            name="type",
+            field=models.CharField(
+                choices=[("album", "Album"), ("song", "Song"), ("mix", "Playlist/Mix")],
+                max_length=256,
+            ),
         ),
     ]

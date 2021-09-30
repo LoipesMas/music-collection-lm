@@ -6,14 +6,14 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('music_entries', '0001_initial'),
+        ("music_entries", "0001_initial"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='musicentry',
-            name='submitter',
-            field=models.CharField(default='null', max_length=256),
+            model_name="musicentry",
+            name="submitter",
+            field=models.CharField(default="null", max_length=256),
             preserve_default=False,
         ),
     ]

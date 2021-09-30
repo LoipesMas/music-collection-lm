@@ -3,10 +3,9 @@ from django.db import models
 from enum import Enum
 
 
-
 # Create your models here.
 class MusicEntry(models.Model):
-    type_choices = (('album','Album'),('song','Song'),('mix','Playlist/Mix'))
+    type_choices = (("album", "Album"), ("song", "Song"), ("mix", "Playlist/Mix"))
     title = models.CharField(max_length=256)
     artist = models.CharField(max_length=256)
     genre = models.CharField(max_length=256)
@@ -17,7 +16,7 @@ class MusicEntry(models.Model):
     added = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.artist+" - "+self.title
+        return self.artist + " - " + self.title
 
     def get_type(self):
         for c in self.type_choices:
