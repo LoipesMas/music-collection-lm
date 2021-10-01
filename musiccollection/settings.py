@@ -30,6 +30,8 @@ SECRET_KEY = env("SECRET_KEY", default="unsafe-key")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool(int(env("DEBUG", default="1")))
 
+
+# Change this if you are not me
 ALLOWED_HOSTS = [
     "localhost",
     "192.168.0.22",

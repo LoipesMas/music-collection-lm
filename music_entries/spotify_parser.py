@@ -1,12 +1,15 @@
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 
+#
+# Used to get info about song from spotify api
+#
 
 class SpotifyMusicEntry:
     title = ""
     artist = ""
     genre = ""
-    _type = ""
+    type = ""
     link = ""
 
     def __str__(self):
@@ -14,11 +17,12 @@ class SpotifyMusicEntry:
 
 
 class SpotifyParser:
+    # TODO: put this in .env
     client_id = "01fb1a0794954cff8c27fd01e66beb9f"
     client_secret = "98e9f96d1b1940aa828efc6db1f2f893"
 
-    client_credentials_manager = None
-    sp = None
+    client_credentials_manager : SpotifyClientCredentials
+    sp : spotipy.Spotify
 
     def __init__(self):
         self.client_credentials_manager = SpotifyClientCredentials(
@@ -35,7 +39,10 @@ class SpotifyParser:
 
         try:
             if _type == "album":
+                # Get album info from spotify
                 album = self.sp.album(link)
+
+                # Parse it to SpotifyMusicEntry
                 entry = SpotifyMusicEntry()
                 entry.title = album["name"]
                 entry.artist = album["artists"][0]["name"]
@@ -43,27 +50,33 @@ class SpotifyParser:
                     entry.genre = album["genres"][0]
                 else:
                     entry.genre = ""
-                entry._type = "album"
+                entry.type = "album"
                 entry.link = link
                 return entry
 
             elif _type == "track":
+                # Get track info from spotify
                 track = self.sp.track(link)
+
+                # Parse it to SpotifyMusicEntry
                 entry = SpotifyMusicEntry()
                 entry.title = track["name"]
                 entry.artist = track["artists"][0]["name"]
                 entry.genre = ""
-                entry._type = "song"
+                entry.type = "song"
                 entry.link = link
                 return entry
 
             elif _type == "playlist":
+                # Get track info from spotify
                 playlist = self.sp.playlist(link)
+
+                # Parse it to SpotifyMusicEntry
                 entry = SpotifyMusicEntry()
                 entry.title = playlist["name"]
                 entry.artist = "Various Artists"
                 entry.genre = ""
-                entry._type = "mix"
+                entry.type = "mix"
                 entry.link = link
                 return entry
 
@@ -73,6 +86,7 @@ class SpotifyParser:
 
 if __name__ == "__main__":
     parser = SpotifyParser()
+    # TODO: refactor this to a proper test
     print(
         parser.parse(
             "https://open.spotify.com/album/4Carzsnpd6yvuHZ49I0oz8?si=pZf1mDwDSquIvToPTbVi1Q"

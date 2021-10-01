@@ -2,9 +2,6 @@ from django import forms
 
 from .models import MusicEntry
 
-from django.forms import ModelForm
-
-
 class MusicEntryForm(forms.Form):
     title = forms.CharField(label="Title", max_length=256)
     artist = forms.CharField(label="Artist", max_length=256)

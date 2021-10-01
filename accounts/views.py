@@ -7,11 +7,12 @@ from .models import PublicKeys
 import random
 import string
 
-# Create your views here.
 def signup_view(request):
     if request.method == "POST":
+        # Get form from request
         form = UserCreationForm(request.POST)
         if form.is_valid():
+            # Logn the new user
             user = form.save()
             login(request, user)
 
@@ -24,10 +25,11 @@ def signup_view(request):
             # there's 208 bilions combinations, but better safe than sorry
             while True:
                 # generate 8 random lower case letters for a public key (the one you share)
-                key = "".join(random.choice(string.ascii_lowercase) for i in range(8))
+                key = "".join(random.choice(string.ascii_lowercase) for _ in range(8))
                 if not key in keys:
                     break
 
+            # Create and save new public key entry
             public_key_entry.public_key = key
             public_key_entry.user_id = request.user.id
             public_key_entry.save()
