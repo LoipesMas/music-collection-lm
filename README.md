@@ -1,6 +1,5 @@
 ## Music Collections
-![Logo](./staticfiles/mc-logo.svg)
-<img src="./staticfiles/mc-logo.svg">
+<img width="30%" src="./staticfiles/mc-logo.svg">
 # A web page for collecting music
 
 Allows users to store info about songs/albums/playlists.
