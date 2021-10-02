@@ -1,4 +1,7 @@
-{% extends 'base_layout.html' %} {% block content %}
+{% extends 'base_layout.html' %} 
+{% load static %}
+
+{% block content %}
 <h1>About</h1>
 <p class="about">
   MusicCollection.ml is a webpage that helps you keep all your favourite music
@@ -6,5 +9,5 @@
   can easily find them later. It also supports parsing spotify links to
   automatically fill in some info. Say goodbye to not knowing what to listen to!
 </p>
-<img src="/music/static/preview.png" class="preview-img" />
+<img src="{% static "preview.png" %}" class="preview-img" />
 {% endblock content %}
