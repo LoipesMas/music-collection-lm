@@ -1,6 +1,12 @@
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 
+import environ
+
+env = environ.Env()
+
+environ.Env.read_env()
+
 #
 # Used to get info about song from spotify api
 #
@@ -18,8 +24,9 @@ class SpotifyMusicEntry:
 
 class SpotifyParser:
     # TODO: put this in .env
-    client_id = "01fb1a0794954cff8c27fd01e66beb9f"
-    client_secret = "98e9f96d1b1940aa828efc6db1f2f893"
+
+    client_id = env("spotify_id")
+    client_secret = env("spotify_secret")
 
     client_credentials_manager : SpotifyClientCredentials
     sp : spotipy.Spotify
